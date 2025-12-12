@@ -30,30 +30,6 @@ for (ir in 2:nrow(data)) {
   }
 }
 
-#beams <- matrix(0, nrow = n_row, ncol = n_col)
-#beams[1, start] <- 1 
-
-#for (ir in 2:n_row) {
-#  for (ic in 1:n_col) {
-#    field <- data[ir, ic]
-#    beam <- beams[ir-1, ic]
-#    
-#    if (field != "^") {
-#      if (beam == 1) {
-#        beams[ir, ic] <- 1
-#      }
-#    }
-#    
-#    if (field == "^") {
-#      if (beam == 1){
-#        sum_beams <- sum_beams + 1
-#        beams[ir, ic-1] <- 1
-#        beams[ir, ic+1] <- 1
-#      }
-#    }
-#  }
-#}
-
 print(paste0("Part 1: ", sum_beams))
 
 
@@ -85,3 +61,4 @@ for (ir in 2:n_row) {
 print(paste0("Part 2: ", sum(timelines[n_row,])))
 
 print(paste0("Runtime in sec: ", round(as.numeric(Sys.time() - start_time, units = "secs"), 5)))
+
